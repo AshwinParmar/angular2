@@ -10,13 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var products_service_1 = require("./products.service");
+var app_service_1 = require("./app.service");
 require("rxjs/add/operator/map");
 var AppComponent = (function () {
-    function AppComponent(_product) {
+    function AppComponent(_product, _appService) {
         this._product = _product;
+        this._appService = _appService;
+        // Event Handling
+        this.Status = true;
+        // Event Handling
         this.appTitle = 'Welcome';
         this.name = 'Ashwin';
         this.appStatus = true;
+        this.current_date = new Date();
+        this.money = 12.3;
+        this.value = "";
         this.appList = [{
                 "ID": "1",
                 "Name": "One",
@@ -27,11 +35,17 @@ var AppComponent = (function () {
                 "Name": "Two",
                 "url": 'app/images/two.png'
             }];
+        this.TutorialName = "My Tutorial";
+        this.appList1 = ["Apple", "Accenture", "Google", "Microsoft", "Adobe"];
     }
+    AppComponent.prototype.clicked = function (event) {
+        this.Status = !this.Status;
+    };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._product.getproducts()
             .subscribe(function (iproducts) { return _this.iproducts = iproducts; });
+        this.value = this._appService.getApp();
     };
     return AppComponent;
 }());
@@ -40,9 +54,10 @@ AppComponent = __decorate([
         selector: 'my-app',
         //template: `<h1>Hello {{name}}</h1><div>To Tutorials Point</div>`,
         templateUrl: 'app/app.component.html',
-        providers: [products_service_1.ProductService]
+        providers: [products_service_1.ProductService, app_service_1.appService]
     }),
-    __metadata("design:paramtypes", [products_service_1.ProductService])
+    __metadata("design:paramtypes", [products_service_1.ProductService,
+        app_service_1.appService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

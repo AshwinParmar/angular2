@@ -1,4 +1,4 @@
-<h1 style='text-shadow: 1px 1px 2px #775533;'>AngularJS 2.x Demo</h1>
+<h1 style='text-shadow: 1px 1px 2px #775533;'>AngularJS 2.x</h1>
 <!--strong>*ngIf Demo</strong><br/>
 <div *ngIf = 'appStatus'>{{appTitle}} {{name}} to Tutorialspoint </div>
 
@@ -11,7 +11,7 @@
   </ul>
 </div-->
 
-<ul>
+<!--ul>
   <li><a [routerLink] = "['/Product']">Product</a></li>
   <li><a [routerLink] = "['/Inventory']">Inventory</a></li>
 </ul>
@@ -19,4 +19,46 @@
 <router-outlet></router-outlet>
 <product-form></product-form>
 
-<!-- Ref: https://www.tutorialspoint.com/angular2/ -->
+<div>{{value}}</div>
+
+<div *ngFor = 'let lst of appList'>
+  <ul>
+    <li>{{lst.ID}}</li>
+    <li>{{lst.Name}}</li>
+    <img [src] = 'lst.url' height='100px' width='100px' style='box-shadow: 1px 1px 2px #888888;'>
+  </ul>
+</div-->
+
+<!--ul>
+  <li *ngFor = "let item of appList | paginate: { itemsPerPage: 1, currentPage: p }"></li>
+</ul>
+<pagination-controls (pageChange) = "p = $event"></pagination-controls-->
+
+<!--div>
+   The name of this Tutorial is {{TutorialName | uppercase}}<br>
+   The first Topic is {{appList1[0] | lowercase}}<br>
+   The second Topic is {{appList1[1] | slice:0:2}}<br>
+   The third Topic is {{appList1[2]}}<br>
+   The third Topic is {{current_date | date:"MM/dd/yyyy" }}<br>
+   Money: {{ money | currency }}<br/>
+   Yield %: {{ 0.3 | percent: '{minIntegerDigits}.{minFractionDigits}{maxFractionDigits}' }}<br/>
+</div-->
+
+<!--div>
+   <input [value] = "name1" (input) = "name1 = $event.target.value">
+   {{name1}}
+</div>
+
+<div> 
+   Evnt: {{Status}} 
+   <button (click) = "clicked()">Click</button> 
+</div> 
+
+<p>Multiplier: {{2 | Multiplier: 10}}</p-->
+
+<div>
+   <input [value] = "name1" (input) = "name1 = $event.target.value">
+   [{{name1}}]
+</div>
+
+<child-app></child-app>

@@ -17,6 +17,10 @@ var router_1 = require("@angular/router");
 // Form Component
 var forms_1 = require("@angular/forms");
 var product_form_component_1 = require("./product-form.component");
+// Import Pipe : Multiplier
+var multiplier_pipe_1 = require("./multiplier.pipe");
+// Import child component
+var child_component_1 = require("./child.component");
 // Define Routes URL
 var appRoutes = [
     { path: 'Product', component: product_component_1.AppProduct },
@@ -31,7 +35,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes), forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, product_component_1.AppProduct, inventory_component_1.AppInventory, NotFound_component_1.PageNotFoundComponent, product_form_component_1.ProductFormComponent],
+        declarations: [app_component_1.AppComponent, product_component_1.AppProduct, inventory_component_1.AppInventory, NotFound_component_1.PageNotFoundComponent, product_form_component_1.ProductFormComponent, multiplier_pipe_1.MultiplierPipe, child_component_1.ChildComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
