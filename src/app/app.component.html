@@ -1,5 +1,5 @@
 <h1 style='text-shadow: 1px 1px 2px #775533;'>AngularJS 2.x Demo</h1>
-<strong>*ngIf Demo</strong><br/>
+<!--strong>*ngIf Demo</strong><br/>
 <div *ngIf = 'appStatus'>{{appTitle}} {{name}} to Tutorialspoint </div>
 
 <br/><strong>*ngFor Demo</strong><br/>
@@ -9,4 +9,14 @@
     <li>{{lst.Name}}</li>
     <img [src] = 'lst.url' height='100px' width='100px' style='box-shadow: 1px 1px 2px #888888;'>
   </ul>
-</div>
+</div-->
+
+<ul>
+  <li><a [routerLink] = "['/Product']">Product</a></li>
+  <li><a [routerLink] = "['/Inventory']">Inventory</a></li>
+</ul>
+
+<router-outlet></router-outlet>
+<product-form></product-form>
+
+<!-- Ref: https://www.tutorialspoint.com/angular2/ -->

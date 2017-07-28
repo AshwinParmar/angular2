@@ -9,6 +9,20 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
+// Import Routes File
+var product_component_1 = require("./product.component");
+var inventory_component_1 = require("./inventory.component");
+var NotFound_component_1 = require("./NotFound.component");
+var router_1 = require("@angular/router");
+// Form Component
+var forms_1 = require("@angular/forms");
+var product_form_component_1 = require("./product-form.component");
+// Define Routes URL
+var appRoutes = [
+    { path: 'Product', component: product_component_1.AppProduct },
+    { path: 'Inventory', component: inventory_component_1.AppInventory },
+    { path: '**', component: NotFound_component_1.PageNotFoundComponent }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -16,8 +30,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes), forms_1.FormsModule],
+        declarations: [app_component_1.AppComponent, product_component_1.AppProduct, inventory_component_1.AppInventory, NotFound_component_1.PageNotFoundComponent, product_form_component_1.ProductFormComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
